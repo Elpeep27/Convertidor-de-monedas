@@ -111,10 +111,11 @@ public class Principal {
                             case 3 -> "COP";
                             case 4 -> "EUR";
                             case 5 -> "MXN";
-                            default -> "salir";
+                            default -> "Saliendo ....";
+
                         };
 
-                        if (opcion.equalsIgnoreCase("salir")) {
+                        if (opcion == "6") {
                             System.out.println("Saliendo....");
                             break;
 
@@ -155,6 +156,7 @@ public class Principal {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+            lectura.close();
         }
     }
     }
