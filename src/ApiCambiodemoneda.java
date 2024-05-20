@@ -6,7 +6,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class Cambiodemoneda {
+public class ApiCambiodemoneda {
 
 
 
@@ -14,7 +14,9 @@ public class Cambiodemoneda {
         public Moneda seleccionDeMonedas(String tipoMoneda)throws IOException, InterruptedException {
 
             HttpClient client = HttpClient.newHttpClient();
-            String api = "https://v6.exchangerate-api.com/v6/663e4f366436f00880ea55fa/latest/"+ tipoMoneda;
+            String api = "https://v6.exchangerate-api.com/v6/37a6a31a965a4a0d71690f47/latest/"+ tipoMoneda;
+
+           // System.out.println(api);
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(api))
                     .build();
