@@ -1,4 +1,4 @@
-import com.sun.jdi.CharValue;
+
 
 import java.io.IOException;
 import java.util.Map;
@@ -12,7 +12,7 @@ public class Principal {
         int monedaDestino;
         String opcion;
         String opcion2;
-        double monedaNueva;
+       // double monedaNueva;
         double monedaNueva2;
 
 
@@ -69,7 +69,7 @@ public class Principal {
 
                 Map<String, Double> tarifa = (Map<String, Double>) moneda.conversion_rates();
                // System.out.println("2" + tarifa);
-                monedaNueva = tarifa.get(opcion);
+                //monedaNueva = tarifa.get(opcion);
                 System.out.println("Esta es la moneda a convertir "+ opcion );
 
 
@@ -103,7 +103,7 @@ public class Principal {
                     try {
 
 
-                        ApiCambiodemoneda apiCambiodemoneda2 = new ApiCambiodemoneda();
+                       // ApiCambiodemoneda apiCambiodemoneda2 = new ApiCambiodemoneda();
                         opcion2 = switch (monedaDestino) {
 
                             case 1 -> "USD";
@@ -115,18 +115,12 @@ public class Principal {
 
                         };
 
-                        if (opcion == "6") {
-                            System.out.println("Saliendo....");
-                            break;
-
-
-                        }
                         //System.out.println(opcion2);
                         //****************************************************************
                         //****************************************************************
                         //****************************************************************
 
-                        Map<String, Double> tarifa2 = (Map<String, Double>) moneda.conversion_rates();
+                       // Map<String, Double> tarifa2 = (Map<String, Double>) moneda.conversion_rates();
                        // System.out.println("2" + tarifa);
                         monedaNueva2 = tarifa.get(opcion2);
                         System.out.println("Esta es la moneda a la que se convertira " + opcion2);
@@ -151,12 +145,9 @@ public class Principal {
 
 
                 }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            } catch (InterruptedException e) {
+            } catch (IOException | InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            lectura.close();
         }
     }
     }
